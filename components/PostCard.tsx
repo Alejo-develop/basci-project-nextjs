@@ -1,6 +1,7 @@
 "use client";
 
 import { PostInterface } from "@/app/posts/page";
+import Link from "next/link";
 
 export const PostCard = (post: PostInterface) => {
   return (
@@ -10,7 +11,9 @@ export const PostCard = (post: PostInterface) => {
       </h3>
       <p>{post.body}</p>
 
-      <button onClick={() => {alert("Click funcionando")}}>Click</button>
+      <Link href={`/posts/${post.id}`}>
+        <button>Click</button>
+      </Link>
     </div>
   );
 };
